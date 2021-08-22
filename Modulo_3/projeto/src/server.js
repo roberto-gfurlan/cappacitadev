@@ -47,9 +47,10 @@ app.post('/batalha', (req, res)=>{
 })
 
 app.post('/pokemons/:id', (req, res)=>{
-    
-    res.send(dataBase.curarPokemon(req.params.id))
+    const pokemoncurado = dataBase.curarPokemon(req.params.id)
+    res.send(pokemoncurado)
 })
+
 
 
 app.listen(3003)

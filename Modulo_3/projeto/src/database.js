@@ -79,10 +79,12 @@ function curarPokemon(id){
     const pokemon = pokemons[id]
     if(pokemon.hp != 100){
         pokemon.hp = pokemon.hp + pocao
-    }
+     }
 
     if(pokemon.hp > 100) pokemon.hp = 100
-    return `após poção, o ${pokemon.nome} tem o hp de: ${pokemon.hp}`
+    return  `após poção, o ${pokemon.nome} tem o hp de: ${pokemon.hp}`
 }
+
+
 
 module.exports = { salvarPokemons, mostrarPokemon, mostrarPokemons, atualizarPokemon, deletarPokemon, batalhaPokemon, curarPokemon}
