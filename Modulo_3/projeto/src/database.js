@@ -82,6 +82,7 @@ function curarPokemon(id){
      }
 
     if(pokemon.hp > 100) pokemon.hp = 100
+    
     return  `após poção, o ${pokemon.nome} tem o hp de: ${pokemon.hp}`
 }
 
