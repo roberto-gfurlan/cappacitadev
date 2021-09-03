@@ -1,14 +1,13 @@
 // Update with your config settings.
 
 module.exports = {
-  client: 'mysql2',
+  client: 'mysql',
   connection: {
-    host : '127.0.0.1',
+    host : 'localhost',
     user : 'root',
-    password : 'nin@Charlie1986',
+    password : 'password',
     database : 'banco_pokemon',
     port: 3306
   }
 }
-
 
