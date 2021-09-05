@@ -8,6 +8,7 @@ module.exports = {
     password : 'password',
     database : 'banco_pokemon',
     port: 3306
-  }
+  },
+  debug:true
 }
 

@@ -31,7 +31,12 @@ async function mostrarPokemon(id){
 
     //const result = await databaseConnection.where({id: id}).select('nome', 'tipo', 'id').from('pokemons')
     const result = await databaseConnection('pokemons').where({id})
-    return result [0]
+    //return result [0]
+    if(id == null){
+        return  "Esse pokemon foi deletado"
+    }else{
+        return result [0]
+    }
 }
 
 async function mostrarPokemons(){
@@ -39,4 +44,36 @@ async function mostrarPokemons(){
     return result
 }
 
-module.exports = { salvarPokemons, mostrarPokemon, mostrarPokemons}
+async function alterarPokemon(id, pokemon){
+    
+    const updatePokemon = {
+        nome: pokemon.nome,
+        tipo: pokemon.tipo,
+        local_origem: pokemon.origem
+    }
+    const result = await databaseConnection('pokemons').where({id}).update(updatePokemon)
+
+    if(result){
+        return{
+            //nome: pokemon.nome,
+            //tipo: pokemon.tipo,
+            //origem:pokemon.origem,
+            ...pokemon,
+            id
+        }
+    }else{
+        console.error("Deu erro!")
+        return{
+            error: "Deu erro na inserção"
+        }
+    }
+}
+
+async function deletarPokemon(id){
+
+    const result = await databaseConnection('pokemons').where({id}) .del()
+    //return result [0]
+    return `pokemon de id:${id}, foi deletado`
+}
+
+module.exports = { salvarPokemons, mostrarPokemon, mostrarPokemons, alterarPokemon, deletarPokemon}

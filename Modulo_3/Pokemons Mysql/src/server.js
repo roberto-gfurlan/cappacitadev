@@ -20,10 +20,21 @@ app.post('/pokemons', async (req, res)=>{
         origem: req.body.origem
 
     })
-    res.send(pokemon)
-    
+    res.send(pokemon)   
 })
 
+app.put('/pokemons/:id', async (req, res)=>{
+    const pokemon = await dataBase.alterarPokemon(req.params.id, {
+        nome: req.body.nome,
+        tipo: req.body.tipo,
+        origem: req.body.origem
 
+    })
+    res.send(pokemon)   
+})
+
+app.delete('/pokemons/:id', async (req, res)=>{
+    res.send(await dataBase.deletarPokemon(req.params.id))
+})
 
 app.listen(3003)
