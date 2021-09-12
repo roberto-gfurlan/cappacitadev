@@ -1,0 +1,17 @@
+.flex-container{
+    background-color: cadetblue;
+    height: 500px;
+    display: flex;
+    /*flex-direction: row;
+    flex-wrap:wrap;*/
+    flex-flow: row wrap;
+    align-items:baseline;
+    
+}
+
+.flex-itens{
+    background-color: rgb(233, 163, 137);
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+}

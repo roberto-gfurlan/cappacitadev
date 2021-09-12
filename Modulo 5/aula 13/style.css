@@ -1,0 +1,31 @@
+.flex-container{
+    background-color: cadetblue;
+    height: 500px;
+    display: flex;
+    /*flex-direction: row;
+    flex-wrap:wrap;*/
+    flex-flow: row wrap;
+    /*align-items:baseline;*/
+    align-content:space-around ;
+    justify-content: center;
+    
+}
+
+.flex-itens{
+    background-color: rgb(233, 163, 137);
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.div1{
+    font-size: 10px;
+}
+
+.div2{
+    font-size: 20px;
+}
+
+.div3{
+    font-size: 40px;
+}
